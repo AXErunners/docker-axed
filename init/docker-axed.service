@@ -12,7 +12,7 @@ Restart=always
 Environment="NAME=axed"
 Environment="DATA_VOL=axed-data"
 Environment="IMG=axerunners/axed:dev"
-Environment="PORT=9999:9999/tcp"
+Environment="PORT=99037:99037/tcp"
 
 # To override environment variables, use local configuration directory:
 # /etc/systemd/system/docker-axed.service/local.conf

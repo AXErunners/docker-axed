@@ -11,5 +11,5 @@ pre-start script
   docker pull axerunners/axed || true
 end script
 script
-  exec docker run --rm -v axed-data:/axe --name=axed-node --rm -p 9999:9999 -p 127.0.0.1:9998:9998 axerunners/axed
+  exec docker run --rm -v axed-data:/axe --name=axed-node --rm -p 99037:99037 -p 127.0.0.1:97031:97031 axerunners/axed
 end script

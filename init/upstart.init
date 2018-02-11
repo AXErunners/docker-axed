@@ -1,0 +1,15 @@
+# Copy to /etc/init/docker-axed.conf
+description "Docker container for axed p2p node"
+start on filesystem and started docker
+stop on runlevel [!2345]
+respawn
+pre-start script
+  # Clean-up if left behind
+  docker rm -f axed-node || true
+
+  # Attempt to always update and fail silently if the network isn't ready
+  docker pull axerunners/axed || true
+end script
+script
+  exec docker run --rm -v axed-data:/axe --name=axed-node --rm -p 9999:9999 -p 127.0.0.1:9998:9998 axerunners/axed
+end script

@@ -35,14 +35,14 @@ Quick Start
         docker volume create --name=axed-data
         docker run -v axed-data:/axe --name=axed-node -d \
             -p 9937:9937 \
-            -p 127.0.0.1:97031:97031 \
+            -p 127.0.0.1:9337:9337 \
             axerunners/axed
 
 2. Verify that the container is running and axed node is downloading the blockchain
 
         $ docker ps
         CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS              PORTS                                              NAMES
-        d0e1076b2dca        axerunners/axed:latest          "axe_oneshot"      2 seconds ago       Up 1 seconds        127.0.0.1:97031->97031/tcp, 0.0.0.0:9937->9937/tcp   axed-node
+        d0e1076b2dca        axerunners/axed:latest          "axe_oneshot"      2 seconds ago       Up 1 seconds        127.0.0.1:9337->9337/tcp, 0.0.0.0:9937->9937/tcp   axed-node
 
 3. You can then access the daemon's output thanks to the [docker logs command]( https://docs.docker.com/reference/commandline/cli/#logs)
 
@@ -59,7 +59,7 @@ Documentation
         docker run -v axed-data:/axe --name=axed-node -d \
             --env TESTNET=1 \
             -p 9937:9937 \
-            -p 127.0.0.1:97031:97031 \
+            -p 127.0.0.1:9337:9337 \
             axerunners/axed
 
 * Additional documentation in the [docs folder](docs).

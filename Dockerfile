@@ -1,5 +1,5 @@
 FROM phusion/baseimage
-MAINTAINER Holger Schinzel <holger@axe.org>
+MAINTAINER charlie137
 
 ARG USER_ID
 ARG GROUP_ID
@@ -15,9 +15,9 @@ RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
 RUN chown axe:axe -R /axe
 
 ADD https://github.com/AXErunners/axe/releases/download/v1.1.1/axe-ubuntu-16-64.tar.gz /tmp/
-RUN tar -xvf /tmp/axe-ubuntu-16-64.tar.gz -C /tmp/
-RUN cp /tmp/axe-ubuntu-16-64/bin/*  /usr/local/bin
-RUN rm -rf /tmp/axe-ubuntu-16-64
+RUN tar -xvf /tmp/axe-*.tar.gz -C /tmp/
+RUN cp /tmp/axe-*/bin/*  /usr/local/bin
+RUN rm -rf /tmp/axe-*
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*

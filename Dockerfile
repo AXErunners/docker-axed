@@ -15,8 +15,8 @@ RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
 RUN chown axe:axe -R /axe
 
 ADD https://github.com/AXErunners/axe/releases/download/v1.1.1/axe-ubuntu-16-64.tar.gz /tmp/
-RUN tar -xvf /tmp/axecore-*.tar.gz -C /tmp/
-RUN cp /tmp/axecore*/bin/*  /usr/local/bin
+RUN tar -xvf /tmp/axe-ubuntu-16-64.tar.gz -C /tmp/
+RUN cp /tmp/axecore-ubuntu-16-64/bin/*  /usr/local/bin
 RUN rm -rf /tmp/axecore*
 
 ADD ./bin /usr/local/bin

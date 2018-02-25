@@ -17,7 +17,7 @@ RUN chown axe:axe -R /axe
 ADD https://github.com/AXErunners/axe/releases/download/v1.1.1/axe-ubuntu-16-64.tar.gz /tmp/
 RUN tar -xvf /tmp/axe-ubuntu-16-64.tar.gz -C /tmp/
 RUN cp /tmp/axecore-ubuntu-16-64/bin/*  /usr/local/bin
-RUN rm -rf /tmp/axecore*
+RUN rm -rf /tmp/axecore-ubuntu-16-64
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*

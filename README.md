@@ -1,4 +1,4 @@
-Axed for Docker
+AXE daemon for Docker
 ================
 
 [![Docker Stats](http://dockeri.co/image/axerunners/axed)](https://hub.docker.com/r/axerunners/axed/)

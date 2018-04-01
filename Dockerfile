@@ -14,10 +14,15 @@ RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
 
 RUN chown axe:axe -R /axe
 
-ADD https://github.com/AXErunners/axe/releases/download/v1.1.2/axecore-1.1.2-linux64.tar.gz /tmp/
-RUN tar -xvf /tmp/axecore-*.tar.gz -C /tmp/
-RUN cp /tmp/axecore*/bin/*  /usr/local/bin
-RUN rm -rf /tmp/axecore*
+ENV AXE_DOWNLOAD_URL  github.com/AXErunners/axe/releases/download/v1.1.2/axecore-1.1.2-linux64.tar.gz
+RUN cd /tmp \
+ && curl -sSL "$AXE_DOWNLOAD_URL" -o axe.tgz "$AXE_DOWNLOAD_URL.asc" -o axe.tgz.asc \
+ && tar xzf axe.tgz --no-anchored axed axe-cli --transform='s/.*\///' \
+ && mv axed axe-cli /usr/bin/ \
+ && rm -rf axe* \
+ && echo "#""!/bin/bash\n/usr/bin/axed -datadir=/axe \"\$@\"" > /usr/local/bin/axed \
+ && echo "#""!/bin/bash\n/usr/bin/axe-cli -datadir=/axe \"\$@\"" > /usr/local/bin/axe-cli \
+ && chmod a+x /usr/local/bin/axed /usr/local/bin/axe-cli /usr/bin/axed /usr/bin/axe-cli
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*

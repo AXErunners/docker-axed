@@ -16,7 +16,7 @@ Requirements
 * At least 4 GB to store the block chain files
 * At least 1 GB RAM + 2 GB swap file
 
-Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  Vultr also *accepts Bitcoin payments*!  May run on the 512 MB instance, but took *forever* (1+ week) to initialize due to swap and disk thrashing.
+Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  Vultr also *accepts Bitcoin payments*! 
 
 
 Really Fast Quick Start
@@ -49,18 +49,6 @@ Quick Start
         docker logs -f axed-node
 
 4. Install optional init scripts for upstart and systemd are in the `init` directory.
-
-
-Documentation
--------------
-
-* To run in testnet, add environment variable `TESTNET=1` to `docker run` as such:
-
-        docker run -v axed-data:/axe --name=axed-node -d \
-            --env TESTNET=1 \
-            -p 9937:9937 \
-            -p 127.0.0.1:9337:9337 \
-            axerunners/axed
 
 * Additional documentation in the [docs folder](docs).
 

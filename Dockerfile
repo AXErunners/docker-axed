@@ -14,7 +14,7 @@ RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
 
 RUN chown axe:axe -R /axe
 
-ENV AXE_DOWNLOAD_URL  github.com/AXErunners/axe/releases/download/v1.1.2/axecore-1.1.2-linux64.tar.gz
+ENV AXE_DOWNLOAD_URL  github.com/AXErunners/axe/releases/download/v1.1.2/axecore-1.1.3-linux64.tar.gz
 RUN cd /tmp \
  && curl -sSL "$AXE_DOWNLOAD_URL" -o axe.tgz "$AXE_DOWNLOAD_URL.asc" -o axe.tgz.asc \
  && tar xzf axe.tgz --no-anchored axed axe-cli --transform='s/.*\///' \

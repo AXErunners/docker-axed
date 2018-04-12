@@ -13,7 +13,7 @@ Requirements
 * At least 4 GB to store the block chain files
 * At least 1 GB RAM + 2 GB swap file
 
-Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  Vultr also *accepts Bitcoin payments*! 
+Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  <b>Vultr</b> also *accepts Bitcoin payments*! 
 
 
 Really Fast Quick Start

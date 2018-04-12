@@ -9,7 +9,7 @@ Docker image that runs the Axe axed node in a container for easy deployment.
 Requirements
 ------------
 
-* Physical machine, cloud instance, or VPS that supports Docker (i.e. Vultr, Digital Ocean, KVM or XEN based VMs) running Ubuntu 14.04 or later (*not OpenVZ containers!*)
+* Physical machine, cloud instance, or VPS that supports Docker (i.e. [Vultr](https://www.vultr.com/?ref=7231821), Digital Ocean, KVM or XEN based VMs) running Ubuntu 14.04 or later (*not OpenVZ containers!*)
 * At least 4 GB to store the block chain files
 * At least 1 GB RAM + 2 GB swap file
 

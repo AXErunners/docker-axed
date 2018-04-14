@@ -53,4 +53,4 @@ Credits
 -------
 
 Original work by Kyle Manna [https://github.com/kylemanna/docker-bitcoind](https://github.com/kylemanna/docker-bitcoind).
-Modified to use Axe Core instead of Bitcoin Core.
+Modified for AXE core.

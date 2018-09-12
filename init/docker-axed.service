@@ -1,6 +1,6 @@
 [Unit]
-Description=Axed Docker Container
-Documentation=https://github.com/AXErunners/docker-axed
+Description=AXED Docker Container
+Documentation=https://github.com/axerunners/docker-axed
 After=network.target docker.socket
 Requires=docker.socket
 

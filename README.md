@@ -1,9 +1,9 @@
-AXE daemon for Docker
+AXED for Docker
 ================
+
 [![Build Status](https://travis-ci.org/AXErunners/docker-axed.svg?branch=master)](https://travis-ci.org/AXErunners/docker-axed/)
 
-
-Docker image that runs the Axe axed node in a container for easy deployment.
+Docker image that runs the axed node in a container for easy deployment.
 
 
 Requirements
@@ -13,7 +13,7 @@ Requirements
 * At least 4 GB to store the block chain files
 * At least 1 GB RAM + 2 GB swap file
 
-Recommended and tested on Vultr 1024 MB RAM instance.  <b>Vultr</b> also *accepts Bitcoin payments*! 
+Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  Vultr also *accepts Bitcoin payments*!  May run on the 512 MB instance, but took *forever* (1+ week) to initialize due to swap and disk thrashing.
 
 
 Really Fast Quick Start
@@ -21,7 +21,7 @@ Really Fast Quick Start
 
 One liner for Ubuntu 14.04 LTS machines with JSON-RPC enabled on localhost and adds upstart init script:
 
-    curl https://raw.githubusercontent.com/AXErunners/docker-axed/master/bootstrap-host.sh | sh -s trusty
+    curl https://raw.githubusercontent.com/axerunners/docker-axed/master/bootstrap-host.sh | sh -s trusty
 
 
 Quick Start
@@ -47,10 +47,22 @@ Quick Start
 
 4. Install optional init scripts for upstart and systemd are in the `init` directory.
 
+
+Documentation
+-------------
+
+* To run in testnet, add environment variable `TESTNET=1` to `docker run` as such:
+
+        docker run -v axed-data:/axe --name=axed-node -d \
+            --env TESTNET=1 \
+            -p 9937:9937 \
+            -p 127.0.0.1:9337:9337 \
+            axerunners/axed
+
 * Additional documentation in the [docs folder](docs).
 
 Credits
 -------
 
 Original work by Kyle Manna [https://github.com/kylemanna/docker-bitcoind](https://github.com/kylemanna/docker-bitcoind).
-Modified for AXE core.
+Modified to use AXE Core instead of Bitcoin Core.

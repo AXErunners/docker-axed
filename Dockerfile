@@ -14,7 +14,7 @@ RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
 
 RUN chown axe:axe -R /axe
 
-ADD https://github.com/AXErunners/axe/releases/download/v1.4.0/axecore-1.4.0-x86_64-linux-gnu.tar.gz /tmp/
+ADD https://github.com/AXErunners/axe/releases/download/v1.4.0.1/axecore-1.4.0.1-x86_64-linux-gnu.tar.gz /tmp/
 RUN tar -xvf /tmp/axecore-*.tar.gz -C /tmp/
 RUN cp /tmp/axecore*/bin/*  /usr/local/bin
 RUN rm -rf /tmp/axecore*

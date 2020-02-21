@@ -1,4 +1,4 @@
-AXED for Docker
+axed for Docker
 ================
 
 [![Build Status](https://travis-ci.org/AXErunners/docker-axed.svg?branch=master)](https://travis-ci.org/AXErunners/docker-axed/)

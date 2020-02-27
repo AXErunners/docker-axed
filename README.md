@@ -1,5 +1,7 @@
-AXED for Docker
+axed for Docker
 ================
+
+[![Docker Stats](http://dockeri.co/image/axerunners/axed)](https://hub.docker.com/r/axerunners/axed/)
 
 [![Build Status](https://travis-ci.org/AXErunners/docker-axed.svg?branch=master)](https://travis-ci.org/AXErunners/docker-axed/)
 

@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:bionic-1.0.0
 MAINTAINER charlie137
 
 ARG USER_ID

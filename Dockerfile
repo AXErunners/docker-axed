@@ -1,5 +1,5 @@
 FROM phusion/baseimage:bionic-1.0.0
-MAINTAINER charlie137
+LABEL maintainer="charlie137"
 
 ARG USER_ID
 ARG GROUP_ID
@@ -11,7 +11,7 @@ ENV USER_ID ${USER_ID:-1000}
 ENV GROUP_ID ${GROUP_ID:-1000}
 RUN groupadd -g ${GROUP_ID} axe
 RUN useradd -u ${USER_ID} -g axe -s /bin/bash -m -d /axe axe
-
+RUN mkdir /axe/.axecore
 RUN chown axe:axe -R /axe
 
 ADD https://github.com/AXErunners/axe/releases/download/v1.6.0.0/axecore-1.6.0-x86_64-linux-gnu.tar.gz /tmp/
